@@ -5,6 +5,7 @@ typedef struct lista {
     ponto* listaPontos;
     int tamanho;
     ponto* ancoras;
+    int ligacoesMaximas;
 } lista;
 
 lista* createList (int, int, int);

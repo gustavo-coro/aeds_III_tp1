@@ -15,7 +15,10 @@ int openFile (int argc, char **argv, FILE **in, FILE **out) {
                 }
             break;
             case 'o':
+                //substituir o que esta no arquivo
                 *out = fopen(optarg, "w+");
+                //adicionar ao final do arquivo
+                //*out = fopen(optarg, "a");
                 if (*out == NULL) {
                     perror("Erro ao abrir o arquivo de saida!");
                     return -1; //erro ao abrir o arquivo;
@@ -51,7 +54,8 @@ lista *readFile (FILE **inFile) {
     int cont = 0;
     while (fgets(line, 20, *inFile) != NULL) {
         sscanf(line, "%d %d", &listaPontos->listaPontos[cont].x, 
-        &listaPontos->listaPontos[cont].y); 
+        &listaPontos->listaPontos[cont].y);
+        listaPontos->listaPontos[cont].pontosDentro = 0;
         cont++;
     }
 

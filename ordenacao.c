@@ -1,12 +1,10 @@
 #include "main.h"
 #include <math.h>
 
-void merge(lista* list, int inicio, int meio, int fim){
-    
+void merge (lista* list, int inicio, int meio, int fim) {
     lista* temp;
     int p1, p2, tamanho, i, j, k;
     int fim1 = 0, fim2 = 0;
-    
     tamanho = fim-inicio+1;
     p1 = inicio;
     p2 = meio+1;
@@ -44,8 +42,7 @@ void merge(lista* list, int inicio, int meio, int fim){
     free(temp);
 }
 
-void mergeSort(lista* list, int inicio, int fim){
-    
+void mergeSort (lista* list, int inicio, int fim) {
     int meio;
     if(inicio < fim){
         meio = floor((inicio+fim)/2);

@@ -8,6 +8,7 @@ lista* createList (int size, int xA, int xB) {
     list->ancoras[1].x = xB;
     list->ancoras[1].y = 0;
     list->tamanho = size;
+    list->ligacoesMaximas = 0;
     list->listaPontos = (ponto*) malloc(sizeof(ponto)*size);
     return list;
 }

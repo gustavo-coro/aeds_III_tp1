@@ -11,7 +11,19 @@ int main (int argc, char **argv) {
     }
     
     lista* list = readFile(&inFile);
-    printList(list);
     mergeSort(list, 0, list->tamanho-1);
-    printList(list);
+    maxLinkedPoints(list);
+    printf("\n\nmax points: %d\n\n", list->ligacoesMaximas);
+    //substituir as linhas do arquivo (usar com o w+)
+    fprintf(outFile, "%d", list->ligacoesMaximas);
+    //adicionar ao final do arquivo (usar com a)
+    //fprintf(outFile, "%d", list->ligacoesMaximas);
+
+    free(list->listaPontos);
+    free(list->ancoras);
+    free(list);
+    fclose(inFile);
+    fclose(outFile);
+
+    return 0;
 }
