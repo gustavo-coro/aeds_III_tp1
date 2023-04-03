@@ -16,9 +16,9 @@ int openFile (int argc, char **argv, FILE **in, FILE **out) {
             break;
             case 'o':
                 //substituir o que esta no arquivo
-                *out = fopen(optarg, "w+");
+                //*out = fopen(optarg, "w+");
                 //adicionar ao final do arquivo
-                //*out = fopen(optarg, "a");
+                *out = fopen(optarg, "a");
                 if (*out == NULL) {
                     perror("Erro ao abrir o arquivo de saida!");
                     return -1; //erro ao abrir o arquivo;
