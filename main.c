@@ -39,7 +39,7 @@ int main (int argc, char **argv) {
     getrusage(RUSAGE_SELF, &usage_end);
     gettimeofday(&time_end, NULL);
 
-    timeval_subtract(&time_end, &time_start, &time_diff);
+    timeval_subtract(&time_diff, &time_end, &time_start);
     double user_time = (double) (usage_end.ru_utime.tv_sec - usage_start.ru_utime.tv_sec) +
     (double) (usage_end.ru_utime.tv_usec - usage_start.ru_utime.tv_usec) / 1000000.0;
     double sys_time = (double) (usage_end.ru_stime.tv_sec - usage_start.ru_stime.tv_sec) +
