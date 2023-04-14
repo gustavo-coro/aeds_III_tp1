@@ -15,13 +15,11 @@ double findSlope (int xA, int yA, int xB, int yB) {
 int isInside (int xA, int xB, int xptC, int yptC, int xptD, int yptD) {
     if ((xptC >= xA) && (xptD < xA)) {
         //D nao esta contido em C
-        //printf("\n1 - (%d, %d) nao esta contido em (%d, %d)\n", xptD, yptD, xptC, yptC);
         return -1;
     }
 
     if ((xptC <= xB) && (xptD > xB)) {
         //D nao esta contido em C
-        //printf("\n2 - (%d, %d) nao esta contido em (%d, %d)\n", xptD, yptD, xptC, yptC);
         return -1;
     }
 
@@ -30,7 +28,6 @@ int isInside (int xA, int xB, int xptC, int yptC, int xptD, int yptD) {
     } else {
         if (findSlope(xA, 0, xptC, yptC) < findSlope(xA, 0, xptD, yptD)) {
             //D nao esta contido em C
-            //printf("\n4 - (%d, %d) nao esta contido em (%d, %d)\n", xptD, yptD, xptC, yptC);
             return -1;
         }
     }
@@ -40,12 +37,10 @@ int isInside (int xA, int xB, int xptC, int yptC, int xptD, int yptD) {
     } else {
         if (findSlope(xB, 0, xptC, yptC) > findSlope(xB, 0, xptD, yptD)) {
             //D nao esta contido em C
-            //printf("\n6 - (%d, %d) nao esta contido em (%d, %d)\n", xptD, yptD, xptC, yptC);
             return -1;
         }
     }
     
     //D esta contido em C
-    //printf("\n(%d, %d) esta contido em (%d, %d)\n", xptD, yptD, xptC, yptC);
     return 1;
 }

@@ -49,17 +49,21 @@ int main (int argc, char **argv) {
     double tempoEntradaSaida = (double) ((tempoDiferenca.tv_sec * 1000000) + tempoDiferenca.tv_usec);
     double tempoTotal = tempoUsuario + tempoSistema;
 
-    /*printf("Computing time: %f seconds\n", user_time + sys_time);
-    printf("in and out time: %f seconds\n", in_out_time);
-    printf("User time: %f seconds\n", user_time);
-    printf("System time: %f seconds\n", sys_time);*/
+    printf("Tempo em microssegunods:\n");
+    printf("Tempo Usuario = %.3f microssegundos\n", tempoUsuario);
+    printf("Tempo Sistema = %.3f microssegundos\n", tempoSistema);
+    printf("Tempo Total = %.3f microssegundos\n", tempoTotal);
+    printf("Tempo Entrada Saida = %.3f microssegundos\n", tempoEntradaSaida);
 
-    //printf("max points: %d and entry number: %d\n", list->ligacoesMaximas, list->tamanho);
-    //substituir as linhas do arquivo (usar com o w+)
-    //fprintf(outFile, "%d", list->ligacoesMaximas);
-    //adicionar ao final do arquivo (usar com a)
-    fprintf(outFile, "%d;%d;%.2f;%.2f;%.2f;%.2f\n", list->ligacoesMaximas, list->tamanho, 
-        tempoTotal, tempoEntradaSaida, tempoUsuario, tempoSistema);
+    printf("\nTempo em segundos:\n");
+    printf("Tempo Usuario = %.3f segundos\n", tempoUsuario / 1000000);
+    printf("Tempo Sistema = %.3f segundos\n", tempoSistema / 1000000);
+    printf("Tempo Total = %.3f segundos\n", tempoTotal / 1000000);
+    printf("Tempo Entrada Saida = %.3f segundos\n", tempoEntradaSaida / 1000000);
+
+    printf("\nMaximo numero de ligacoes: %d\nNumero de entradas: %d\n", list->ligacoesMaximas, list->tamanho);
+    
+    fprintf(outFile, "%d", list->ligacoesMaximas);
 
     free(list->listaPontos);
     free(list->ancoras);
