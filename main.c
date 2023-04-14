@@ -2,28 +2,31 @@
 #include <sys/time.h>
 #include <sys/resource.h>
 
-void timeval_subtract(struct timeval *result, struct timeval *x, struct timeval *y) {
-    if (x->tv_usec < y->tv_usec) {
-        int borrow = (y->tv_usec - x->tv_usec) / 1000000 + 1;
-        y->tv_usec -= 1000000 * borrow;
-        y->tv_sec += borrow;
-    }
-    if (x->tv_usec - y->tv_usec > 1000000) {
-        int carry = (x->tv_usec - y->tv_usec) / 1000000;
-        y->tv_usec += 1000000 * carry;
-        y->tv_sec -= carry;
-    }
-    result->tv_sec = x->tv_sec - y->tv_sec;
-    result->tv_usec = x->tv_usec - y->tv_usec;
+void timeval_subtract (struct timeval *result, struct timeval *x, struct timeval *y) {
+  /* Perform the carry for the later subtraction by updating y. */
+  if (x->tv_usec < y->tv_usec) {
+    int nsec = (y->tv_usec - x->tv_usec) / 1000000 + 1;
+    y->tv_usec -= 1000000 * nsec;
+    y->tv_sec += nsec;
+  }
+  if (x->tv_usec - y->tv_usec > 1000000) {
+    int nsec = (x->tv_usec - y->tv_usec) / 1000000;
+    y->tv_usec += 1000000 * nsec;
+    y->tv_sec -= nsec;
+  }
+
+  /* Compute the time remaining to wait.
+     tv_usec is certainly positive. */
+  result->tv_sec = x->tv_sec - y->tv_sec;
+  result->tv_usec = x->tv_usec - y->tv_usec;
 }
 
 int main (int argc, char **argv) {
 
-    struct rusage usage_start, usage_end;
-    struct timeval time_start, time_end, time_diff;
+    struct timeval tempoInicio, tempoFim, tempoDiferenca;
+    struct rusage usage;
 
-    getrusage(RUSAGE_SELF, &usage_start);
-    gettimeofday(&time_start, NULL);
+    gettimeofday(&tempoInicio, NULL);
 
     FILE (*inFile);
     FILE (*outFile);
@@ -36,15 +39,15 @@ int main (int argc, char **argv) {
     mergeSort(list, 0, list->tamanho-1);
     maxLinkedPoints(list);
 
-    getrusage(RUSAGE_SELF, &usage_end);
-    gettimeofday(&time_end, NULL);
+    getrusage(RUSAGE_SELF, &usage);
+    gettimeofday(&tempoFim, NULL);
 
-    timeval_subtract(&time_diff, &time_end, &time_start);
-    double user_time = (double) (usage_end.ru_utime.tv_sec - usage_start.ru_utime.tv_sec) +
-    (double) (usage_end.ru_utime.tv_usec - usage_start.ru_utime.tv_usec) / 1000000.0;
-    double sys_time = (double) (usage_end.ru_stime.tv_sec - usage_start.ru_stime.tv_sec) +
-    (double) (usage_end.ru_stime.tv_usec - usage_start.ru_stime.tv_usec) / 1000000.0;
-    double in_out_time = (double) (time_diff.tv_sec) + (double) (time_diff.tv_usec) / 1000000.0;
+    timeval_subtract(&tempoDiferenca, &tempoFim, &tempoInicio);
+
+    double tempoUsuario = (double) usage.ru_utime.tv_sec * 1000000 + usage.ru_utime.tv_usec;
+    double tempoSistema = (double) usage.ru_stime.tv_sec * 1000000 + usage.ru_stime.tv_usec;
+    double tempoEntradaSaida = (double) ((tempoDiferenca.tv_sec * 1000000) + tempoDiferenca.tv_usec);
+    double tempoTotal = tempoUsuario + tempoSistema;
 
     /*printf("Computing time: %f seconds\n", user_time + sys_time);
     printf("in and out time: %f seconds\n", in_out_time);
@@ -55,8 +58,8 @@ int main (int argc, char **argv) {
     //substituir as linhas do arquivo (usar com o w+)
     //fprintf(outFile, "%d", list->ligacoesMaximas);
     //adicionar ao final do arquivo (usar com a)
-    fprintf(outFile, "%d;%d;%f;%f;%f;%f\n", list->ligacoesMaximas, list->tamanho, 
-        user_time + sys_time, in_out_time, user_time, sys_time);
+    fprintf(outFile, "%d;%d;%.2f;%.2f;%.2f;%.2f\n", list->ligacoesMaximas, list->tamanho, 
+        tempoTotal, tempoEntradaSaida, tempoUsuario, tempoSistema);
 
     free(list->listaPontos);
     free(list->ancoras);
