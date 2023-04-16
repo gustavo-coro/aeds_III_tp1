@@ -121,23 +121,19 @@
         \includegraphics[width=1.0\linewidth]{Figuras/2.png}\\
         Podemos notar que o algoritmo possui um laço \textbf{for} aninhado dentro de outro laço 
         \textbf{for}, instintivamente ja falaríamos \textbf{O(n²)} mas porque a complexidade dele é
-        essa? %Vamos observar a função de custo desse algoritmo:\\
-        %\[f(n) = \frac{n^2}{2}-\frac{n}{2}\]\\
-        Observando cada parte do algoritmo notamos que o laço interno é executado n vezes, \\  
-        %Observando cada parte do algoritmo observamos que o laço mais externo é executado \textbf{n-1} 
-        %vezes, pois o mesmo ja inicia na segunda posição do vetor \textbf{i=1}, sendo assim o primeiro 
-        %termo da função. Já o laço interno é executado \textbf{i-1} vezes, ou seja, ao final será \textbf{(n-1)-1}.
-        %Abrindo a função fica o seguinte:\\
+        essa?
+        Observando cada parte do algoritmo notamos que o laço interno é executado n vezes, ja o laço
+        externo é executado n-1 vezes. Então para descobrirmos a complexidade precisamos utilizar um 
+        somatório:
+        \[\sum_{1}^{n-1}(n-1) = \frac{n(n-1)}{2} = \frac{n^2-n}{2}\]
         
         \textit{Obs.: Ignoramos o custo das atribuições, incrementações e comparações pois em todos 
         os casos o custo de tais operações é sempre constante.}\\
         
         Como sempre tomamos o termo mais "custoso" da função como base, temos que a aplicação é O(n²). 
-        Após esse calculo ainda é necessário adicionar o custo da ordenação, mas como o merge sort é, 
-        notoriamente, O(n log n), podemos "ignorar", já que a ordem do método principal o domina assintoticamente.
-
-        
-
+        Após esse calculo ainda seria necessário adicionar o custo da ordenação, mas como o merge sort é, 
+        notoriamente, O(n log n), podemos "ignorar", já que a ordem do método principal o domina 
+        assintoticamente.
 
     \newpage
     \section{AVALIAÇÃO DE RESULTADOS}

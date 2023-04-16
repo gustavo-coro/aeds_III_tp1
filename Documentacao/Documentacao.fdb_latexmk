@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex Documentacao"] 1681622576 "Documentacao.aux" "Documentacao.bbl" "Documentacao" 1681624840
+["bibtex Documentacao"] 1681628562 "Documentacao.aux" "Documentacao.bbl" "Documentacao" 1681628662
   "/usr/share/texlive/texmf-dist/bibtex/bst/base/apalike.bst" 1292289607 24635 604dafcc79f521a11ea73e506e1fbd98 ""
-  "Documentacao.aux" 1681624840 1548 df9c20e8adb053449d12ce8600b8d4f6 "pdflatex"
+  "Documentacao.aux" 1681628662 1548 df9c20e8adb053449d12ce8600b8d4f6 "pdflatex"
   "bibliografia.bib" 1681527269 764 709d2e31e093607c8fdd8963582a35db ""
   (generated)
   "Documentacao.bbl"
   "Documentacao.blg"
-["pdflatex"] 1681624839 "/home/matheuznsilva/GitHub/aeds_III_tp1/Documentacao/Documentacao.tex" "Documentacao.pdf" "Documentacao" 1681624840
+["pdflatex"] 1681628662 "/home/matheuznsilva/GitHub/aeds_III_tp1/Documentacao/Documentacao.tex" "Documentacao.pdf" "Documentacao" 1681628662
   "/etc/texmf/web2c/texmf.cnf" 1651301193 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/matheuznsilva/GitHub/aeds_III_tp1/Documentacao/Documentacao.tex" 1681624839 10907 d9ab41e13edd595f6d7e76f7d5065d07 ""
+  "/home/matheuznsilva/GitHub/aeds_III_tp1/Documentacao/Documentacao.tex" 1681628661 10620 269bf72c82ddf0a457e0be8974183961 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcbx1200.tfm" 1136768653 1536 c09172c8f235393e6235bb4758357c41 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1136768653 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
@@ -30,8 +30,14 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm" 1136768653 1484 ed72f8f5cf654cda15ecc8e32bfcbee5 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb" 1248133631 36118 fad905eba93cff5bce1e185fe980a177 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb" 1248133631 24252 1e4e051947e12dfb50fee0b7f4e26e3a ""
   "/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -72,10 +78,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1651301207 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1651301229 2801081 1007be99a004a1e13c504e9f69e609e7 ""
-  "Documentacao.aux" 1681624840 1548 df9c20e8adb053449d12ce8600b8d4f6 "pdflatex"
-  "Documentacao.bbl" 1681622576 672 c09cd6e7c358ebeace4892ddec4fd1ec "bibtex Documentacao"
-  "Documentacao.tex" 1681624839 10907 d9ab41e13edd595f6d7e76f7d5065d07 ""
-  "Documentacao.toc" 1681624840 697 38b3c0022ebc95568ee868579fcc99bb "pdflatex"
+  "Documentacao.aux" 1681628662 1548 df9c20e8adb053449d12ce8600b8d4f6 "pdflatex"
+  "Documentacao.bbl" 1681628562 672 c09cd6e7c358ebeace4892ddec4fd1ec "bibtex Documentacao"
+  "Documentacao.tex" 1681628661 10620 269bf72c82ddf0a457e0be8974183961 ""
+  "Documentacao.toc" 1681628662 697 38b3c0022ebc95568ee868579fcc99bb "pdflatex"
   "Figuras/1.1.png" 1681405147 105303 eea3d4d077b051cf04139e16158ef463 ""
   "Figuras/2.png" 1681340803 68332 a0ac94eb8022ccaae13062b247bc643d ""
   "Figuras/3.png" 1681341339 19613 7694f3e2ec45703541659e0ded490bbd ""
