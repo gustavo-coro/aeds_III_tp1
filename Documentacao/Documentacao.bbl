@@ -1,0 +1,24 @@
+\begin{thebibliography}{}
+
+\bibitem[BACKES, 2012]{Backes2012}
+BACKES, A.~R. (2012).
+\newblock {\em Linguagem C completa e descomplicada}.
+\newblock Elsevier.
+
+\bibitem[BACKES, 2016]{Backes2016}
+BACKES, A.~R. (2016).
+\newblock {\em Estrutura de dados descomplicada em linguagem C}.
+\newblock Elsevier.
+
+\bibitem[CORMEN et~al., 2012]{Cormen2012}
+CORMEN, T.~H., Leiserson, C., Rivest, R., and Stein, C. (2012).
+\newblock {\em Algoritmos: teoria e prática}.
+\newblock LTC.
+
+\bibitem[GNU, 2023]{GNU}
+GNU (1993-2023).
+\newblock Calculating elapsed time.
+\newblock
+  \url{https://www.gnu.org/software/libc/manual/html_node/Calculating-Elapsed-Time.html}.
+
+\end{thebibliography}

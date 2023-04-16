@@ -60,8 +60,7 @@ int main (int argc, char **argv) {
     printf("Tempo Sistema = %.3f segundos\n", tempoSistema / 1000000);
     printf("Tempo Total = %.3f segundos\n", tempoTotal / 1000000);
     printf("Tempo Entrada Saida = %.3f segundos\n", tempoEntradaSaida / 1000000);
-
-    printf("\nMaximo numero de ligacoes: %d\nNumero de entradas: %d\n", list->ligacoesMaximas, list->tamanho);
+    printf("\nMaximo numero de ligacoes: %d\nNumero de entradas: %d\n\n", list->ligacoesMaximas, list->tamanho);
     
     fprintf(outFile, "%d", list->ligacoesMaximas);
 
